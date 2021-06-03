@@ -10,8 +10,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      title: 'Custom template',
+      filename: "index.html",
+      template: "index.html"
     }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: "form.html",
+      template: "form.html"
+    })
   ],
   module: {
     rules: [
