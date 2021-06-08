@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercices List</title>
-  </head>
+  ${require('./partials/head.html')}
   <body>
-    <h1>Register form</h1>
-    <form>
-      <input type="text" value="" placeholder="Name">
-    </form>
+    ${require('./partials/header.html')}
+    <main>
+      <h1>Examples Index</h1>
+      <a href='form.html'>Form</a>
+    </main>
   </body>
+  <%= require('html-loader!.src/partials/footer.html').default %>
+  ${require('./src/partials/footer.html')}
 </html>

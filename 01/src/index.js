@@ -1,5 +1,5 @@
 import "./assets/css/normalize.css";
-
+import html from './partials/footer.html';
 // import { getUsers } from "./users";
 //
 // export async function printUsers() {

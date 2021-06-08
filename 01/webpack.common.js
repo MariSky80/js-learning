@@ -1,6 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+let htmlPageNames = ['form'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+  return new HtmlWebpackPlugin({
+    title: name,
+    template: `${name}.html`,  // `./src/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`] // respective JS files
+  })
+});
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -10,20 +20,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Custom template',
-      filename: "index.html",
-      template: "index.html"
-    }),
-    new HtmlWebpackPlugin({  // Also generate a test.html
-      filename: "form.html",
-      template: "form.html"
+      title: 'Index template',
+      filename: 'index.html',
+      template: 'index.html',
+      chunks: ['main']
     })
-  ],
+  ].concat(multipleHtmlPlugins),
   module: {
     rules: [
       {
         test: /\.html$/i,
         loader: "html-loader",
+        use: ['html-loader'],
       },
       {
         test: /\.m?js$/,
