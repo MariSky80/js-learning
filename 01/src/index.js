@@ -1,5 +1,9 @@
 import "./assets/css/normalize.css";
-import html from './partials/footer.html';
+
+// import html from './partials/footer.html';
+// require('html-loader!./partials/footer.html');
+
+console.log(document);
 // import { getUsers } from "./users";
 //
 // export async function printUsers() {

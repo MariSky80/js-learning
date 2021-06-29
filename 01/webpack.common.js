@@ -12,9 +12,12 @@ let multipleHtmlPlugins = htmlPageNames.map(name => {
 });
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: "./src/index.js",
+    form: "./src/form.js"
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -30,8 +33,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
-        use: ['html-loader'],
+        loader: 'html-loader',
       },
       {
         test: /\.m?js$/,
