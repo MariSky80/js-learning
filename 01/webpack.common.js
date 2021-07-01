@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+
 
 let htmlPageNames = ['form'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
@@ -27,7 +29,24 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       chunks: ['main']
-    })
+    }),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/head.html'),
+        priority: 'high',
+        location: 'head'
+      },
+      {
+        path: path.join(__dirname, './src/partials/header.html'),
+        priority: 'high',
+        location: 'main'
+      },
+      {
+        path: path.resolve(__dirname, './src/partials/footer.html'),
+        priority: 'high',
+        location: 'footer'
+      }
+    ])
   ].concat(multipleHtmlPlugins),
   module: {
     rules: [
