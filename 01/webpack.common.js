@@ -3,19 +3,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 
-let htmlPageNames = ['form'];
+let htmlPageNames = ['index', 'form'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
-    title: name,
+    title: `${name} template`,
     template: `${name}.html`,  // `./src/${name}.html`, // relative path to the HTML files
     filename: `${name}.html`, // output HTML files
     chunks: [`${name}`] // respective JS files
   })
 });
-
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    index: "./src/index.js",
     form: "./src/form.js"
   },
   output: {
@@ -28,23 +27,26 @@ module.exports = {
       title: 'Index template',
       filename: 'index.html',
       template: 'index.html',
-      chunks: ['main']
+      chunks: ['index']
     }),
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, './src/partials/head.html'),
         priority: 'high',
-        location: 'head'
+        location: 'head',
+        template_filename: ['index.html', 'form.html']
       },
       {
         path: path.join(__dirname, './src/partials/header.html'),
         priority: 'high',
-        location: 'main'
+        location: 'main',
+        template_filename: ['index.html', 'form.html']
       },
       {
-        path: path.resolve(__dirname, './src/partials/footer.html'),
+        path: path.join(__dirname, './src/partials/footer.html'),
         priority: 'high',
-        location: 'footer'
+        location: 'footer',
+        template_filename: ['index.html', 'form.html']
       }
     ])
   ].concat(multipleHtmlPlugins),
@@ -52,7 +54,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: 'html-loader'
       },
       {
         test: /\.m?js$/,
