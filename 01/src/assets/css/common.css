@@ -1,0 +1,31 @@
+/* ====================== Grid css basic structure ====================== */
+
+body {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: 80px 1fr 65px;
+  grid-gap: 0;
+	grid-template-areas: "header"
+	                     "main"
+	                     "footer";
+  font-family:$f-default;
+  min-height: 100vh;
+  margin:0;
+  font-size: 1.2em;
+  background-color: $cbg-content;
+}
+
+header {
+  grid-area: header;
+  background-color: $cbg-header;
+}
+
+main {
+  grid-area: main;
+  background-color: $cbg-content;
+}
+
+footer {
+  grid-area: footer;
+  background-color: $cbg-footer;
+}

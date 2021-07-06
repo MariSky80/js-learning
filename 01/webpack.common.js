@@ -39,7 +39,7 @@ module.exports = {
       {
         path: path.join(__dirname, './src/partials/header.html'),
         priority: 'high',
-        location: 'main',
+        location: 'header',
         template_filename: ['index.html', 'form.html']
       },
       {

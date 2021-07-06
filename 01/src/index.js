@@ -1,4 +1,5 @@
 import "./assets/css/normalize.css";
+import "./assets/css/common.css";
 
 // import html from './partials/footer.html';
 // require('html-loader!./partials/footer.html');
