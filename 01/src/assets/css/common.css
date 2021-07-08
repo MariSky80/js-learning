@@ -1,31 +1,73 @@
-/* ====================== Grid css basic structure ====================== */
 
+@import url('variables.css');
+
+
+/* ====================== Grid css basic structure ====================== */
 body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-	grid-template-rows: 80px 1fr 65px;
+	grid-template-rows: 135px 1fr 65px;
   grid-gap: 0;
 	grid-template-areas: "header"
 	                     "main"
 	                     "footer";
-  font-family:$f-default;
+  font-family: var(--f-default);
   min-height: 100vh;
   margin:0;
   font-size: 1.2em;
-  background-color: $cbg-content;
+  background-color: var(--cbg-content);
 }
 
 header {
   grid-area: header;
-  background-color: $cbg-header;
+  background-color: var(--cbg-header);
 }
 
 main {
   grid-area: main;
-  background-color: $cbg-content;
+  background-color: var(--cbg-content);
 }
 
 footer {
   grid-area: footer;
-  background-color: $cbg-footer;
+  background-color: var(--cbg-footer);
+}
+
+
+/* ====================== Css color and spacing ====================== */
+
+header h1 {
+  color: var(--cf-header);
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0.5rem 0;
+  background-color: var(--cbg-content);
+}
+
+header nav ul li {
+	display: inline;
+  padding: 0 1rem;
+}
+
+header nav ul li a,
+header nav ul li a:focus,
+header nav ul li a:visited {
+  color: var(--cf-menu);
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main section {
+  
+}
+
+footer p {
+  text-align: center;
+  color: var(--cf-footer);
 }

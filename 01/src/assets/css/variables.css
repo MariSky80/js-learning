@@ -1,0 +1,13 @@
+
+:root {
+  /*  Background */
+  --cbg-header: #252831;
+  --cbg-footer: #444;
+  --cbg-content: #f3f3f3;
+  --cbg-footer: #444;
+
+  /* Font */
+  --f-default: Arial, Helvetica, sans-serif;
+  --cf-header: #fff;
+  --cf-footer: #fff;
+}
