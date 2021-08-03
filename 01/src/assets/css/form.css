@@ -1,0 +1,30 @@
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section {
+  margin: left;
+  padding: 0 12rem;
+  flex: 1 100%;
+}
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+form input {
+  flex-grow: 4; /* default 0 */
+  margin: 0.5rem;
+  width: 25%;
+  height: 2.5rem;
+  outline: none;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}

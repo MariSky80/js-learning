@@ -20,7 +20,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: var(--cbg-header);
+  background-color: var(--cf-menu);
 }
 
 main {
@@ -37,14 +37,14 @@ footer {
 /* ====================== Css color and spacing ====================== */
 
 header h1 {
-  color: var(--cf-header);
+  color: var(--cbg-header);
   text-align: center;
 }
 
 header nav ul {
   list-style: none;
-  padding: 0.5rem 0;
-  background-color: var(--cbg-content);
+  padding: 0.5rem 10rem;
+  background-color: var(--cbg-header);
 }
 
 header nav ul li {
@@ -64,7 +64,7 @@ header nav ul li a:hover {
 }
 
 main section {
-  
+
 }
 
 footer p {
